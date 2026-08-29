@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { assetPath } from "@/lib/assets";
 
 const screens = [
   {
@@ -68,7 +69,7 @@ const Screenshots = () => {
               className="mx-auto w-full max-w-[300px]"
             >
               <div className="phone-frame bg-white transition-transform duration-500 hover:-translate-y-1">
-                <img src={screen.src} alt={`${screen.title} app screen`} className="h-full w-full object-cover" loading="lazy" />
+                <img src={assetPath(screen.src)} alt={`${screen.title} app screen`} className="h-full w-full object-cover" loading="lazy" />
               </div>
               <div className="mt-4 rounded-lg border border-border bg-secondary/40 p-4">
                 <h3 className="font-display text-lg font-semibold">{screen.title}</h3>

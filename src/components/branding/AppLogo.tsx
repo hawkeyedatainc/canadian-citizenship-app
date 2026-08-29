@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { assetPath } from "@/lib/assets";
 
 type AppLogoProps = {
   className?: string;
@@ -13,7 +14,7 @@ const AppLogo = ({ className }: AppLogoProps) => {
       )}
     >
       <img
-        src="/app/app-icon.png"
+        src={assetPath("/app/app-icon.png")}
         alt="Canada Citizenship Prep app icon"
         className="h-full w-full object-cover"
       />

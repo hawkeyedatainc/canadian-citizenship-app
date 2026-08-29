@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Apple, BookOpen, ShieldCheck } from "lucide-react";
+import { assetPath } from "@/lib/assets";
 
 const Hero = () => {
   return (
@@ -73,7 +74,7 @@ const Hero = () => {
             <div className="relative">
               <div className="phone-frame w-[280px] bg-white md:w-[310px]">
                 <img
-                  src="/app/home.jpg"
+                  src={assetPath("/app/home.jpg")}
                   alt="Canada Citizenship Prep home screen with countdown, performance, and AI focus review"
                   className="h-full w-full object-cover"
                 />
