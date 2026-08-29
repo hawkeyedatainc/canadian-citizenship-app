@@ -17,6 +17,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const currentPath = `${location.pathname}${location.hash}`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -42,15 +43,15 @@ const Navbar = () => {
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.path}
+              to={link.path}
               className={`text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === link.path ? "text-primary" : "text-muted-foreground"
+                currentPath === link.path ? "text-primary" : "text-muted-foreground"
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href="https://apps.apple.com"
@@ -79,16 +80,16 @@ const Navbar = () => {
           className="md:hidden glass mt-2 mx-4 rounded-2xl p-6 flex flex-col gap-4"
         >
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.path}
+              to={link.path}
               onClick={() => setMobileOpen(false)}
               className={`text-sm font-medium ${
-                location.pathname === link.path ? "text-primary" : "text-muted-foreground"
+                currentPath === link.path ? "text-primary" : "text-muted-foreground"
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href="https://apps.apple.com"
